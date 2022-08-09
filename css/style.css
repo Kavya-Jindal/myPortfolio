@@ -1,0 +1,237 @@
+
+*{
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   outline: none; 
+}
+::before,::after{
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right,#d68aefac,#7ee3eac5);
+    background-attachment: fixed;
+    font-size: 16px;
+    
+    line-height: 1.5;
+    overflow-x: hidden;
+    /* -webkit-tap-highlight-color:transparent; */
+    padding:5vh 15px ;
+}
+body::before{
+    content:'';
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    z-index: -1;
+    opacity: 0.12;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+section{
+  background-color: rgba(255,255,255,0.25);  
+  border: 1px solid rgba(255,255,255,0.40);
+  min-height: 90vh;
+  border-radius: 30px;
+}
+.main{
+    
+    max-width: 1200px;
+    margin: auto;
+}
+.container{
+    
+    padding: 0 40px;
+    width: 100%;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.alignItems{
+    align-items: center;
+}
+.sectionPadding{
+    padding: 80px 0;
+}
+.sectionTitle{
+    background-color: red;
+    padding:0 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.sectionTitle h2{
+    font-size: 40px;
+    text-transform: capitalize;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: white;
+}
+::-webkit-scrollbar-thumb{
+    background-color: cyan;
+}
+.btn
+{
+    line-height: 1.5;
+    background-color: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.40);
+    padding: 10px 28px;
+    display: inline-block;
+    border-radius: 40px;
+    color:rgba(111, 115, 231, 0.87);
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    cursor: pointer;
+    user-select: none;
+ position: relative;
+ overflow:hidden;
+ vertical-align: middle;
+}
+button{
+    font-family: inherit;
+    user-select: none;
+}
+/* .btn::before{
+    content:'';
+    position: relative;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 0%;
+    
+    z-index: -1;
+    transition:width 0.3s ease;
+}
+.btn:hover::before{
+    width: 100%;
+    background-color:rgb(111, 115, 231);
+} */
+/* homeSection */
+.homeSection{
+    display: flex;
+    padding: 120px 0;
+    
+
+}
+
+.homeText,.homeImage{
+    width: 50%;
+    padding: 15px;
+}
+.homeText p{
+font-size: 18px;
+}
+.homeText h1{
+font-size: 50px;
+text-transform: capitalize;
+}
+.homeText h2{
+font-size: 20px;
+text-transform: capitalize;
+}
+.homeImage .imgBox{
+    max-width: 360px;
+    background-color: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    border: 8px solid rgba(255,255,255,0.25);
+    margin: auto;
+}
+.homeImage .imgBox img{
+    width: 100%;
+    border-radius: 50%;
+}
+.aboutImage{
+   
+    width: 40%;
+    padding:0 15px ;
+}
+.aboutText{
+  
+    width: 60%;
+    padding:0 15px ;
+}
+.aboutImage .imgBox{
+    background-color: rgba(255,255,255,0.25);
+    max-width: 380px;
+    border: 1px solid rgba(255,255,255,0.40);
+    margin: auto;
+    border-radius: 10px;
+}
+.aboutImage .imgBox img{
+    width: 100%;
+}
+.aboutText h3{
+    text-transform: capitalize;
+    font-size: 20px;
+    margin: 20px 0;
+}
+.aboutText .skills{
+    display: flex;
+    flex-wrap: wrap;
+}
+.aboutText .skillItem{
+    background-color: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.40);
+    padding: 5px 15px;
+    text-transform: capitalize;
+    margin:0 10px 10px 0 ;
+    border-radius: 20px;
+}
+.aboutTabs{
+    margin-top: 20px;
+}
+.aboutTabs .tabItem{
+    padding: 2px 0;
+    background-color: transparent;
+    border: none;
+    text-transform: capitalize;
+    display: inline-block;
+    color: blue;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight:500 ;
+    margin:0 30px 0 0;
+    position: relative;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+.aboutTabs .tabItem:last-child{
+    margin: 0;
+}
+.aboutTabs .tabItem::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: blue;
+    transition: width 0.3s ease;
+}
+.aboutTabs .tabItem:hover::before{
+   width: 100%;
+
+}
+.aboutTabs .tabItem.active::before{
+    width: 100%;
+    background-color:red;
+}
+.aboutTabs .tabItem.active{
+    color: red;
+    opacity: 1;
+    cursor: auto;
+}
