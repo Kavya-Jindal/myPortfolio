@@ -17,7 +17,7 @@ body{
     line-height: 1.5;
     overflow-x: hidden;
     /* -webkit-tap-highlight-color:transparent; */
-    padding:5vh 15px ;
+    padding:35px 15px ;
 }
 body::before{
     content:'';
@@ -40,13 +40,19 @@ img{
 section{
   background-color: rgba(255,255,255,0.25);  
   border: 1px solid rgba(255,255,255,0.40);
-  min-height: 90vh;
+  min-height: calc(100vh-70px);
   border-radius: 30px;
+  backdrop-filter: blur;
 }
 .main{
     
     max-width: 1200px;
     margin: auto;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+}
+.main.fadeOut{
+    opacity: 0;
 }
 .container{
     
@@ -62,6 +68,9 @@ section{
 }
 .sectionPadding{
     padding: 80px 0;
+}
+.flexEnd{
+    justify-content: flex-end;
 }
 .sectionTitle{
     /* background-color: red; */
@@ -121,6 +130,97 @@ button{
     background-color:rgb(111, 115, 231);
 } */
 /* homeSection */
+.header{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 20px 0 0;
+}
+.header .navToggler{
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color:rgba(255,255,255,0.25) ;
+    border: 1px solid rgba(255,255,255,0.40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    z-index: 1;
+}
+.header .navToggler span{
+    height: 2px;
+    width: 24px;
+    background-color: red;
+    position: relative;
+}
+.header .navToggler span::before,
+.header .navToggler span::after
+{
+content:'';
+position: absolute;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: red;
+transition: all 0.3s ease;
+}
+.header .navToggler span::before{
+    left: 0;
+    transform: translateY(-8px);
+}
+.header .navToggler span::after{
+   right: 0;
+    transform: translateY(8px);
+}
+.header.navToggler:hover span::before,
+.header.navToggler:hover span::after{
+    width: 50%;
+}
+.header .nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    
+    padding:35px 15px;
+  
+}
+.header .navInner{
+min-height: calc(100vh-70px);
+
+max-width: 1200px ;
+background-color: rgba(255,255,255,0.25);
+margin: auto;
+border: 1px solid rgba(255,255,255,0.40);
+backdrop-filter: blur;
+padding: 50px 0;
+border-radius: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.header .navInner ul li{
+    text-align: center;
+    
+}
+.header .navInner ul li a{
+    font-size: 40px;
+    text-transform: capitalize;
+    color: darkblue;
+    display: block;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+.header .navInner ul li a:hover{
+    
+}
 .homeSection{
     display: flex;
     padding: 120px 0;
@@ -309,4 +409,9 @@ width: 100%;
     color: black;
     border-radius: 50%;
     margin: 6px 4px 0 0 ;
+    transition: all 0.3s ease;
+}
+.contactInfoItem .socialLinks a:hover{
+    color: white;
+    background-color: red
 }
